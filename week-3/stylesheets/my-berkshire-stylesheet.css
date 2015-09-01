@@ -1,0 +1,60 @@
+body {
+   color: #000080;
+    background-color: #ffffff;
+}
+
+.lines{
+    height: 1px;
+border: 0;
+color: #333;
+background-color: #333;
+width: 100%;
+}
+
+b{
+    font-size: 12px;
+    display: block;
+}
+
+.geico{
+    text-align: center;
+}
+
+.geico p{
+    font-size: 10px;
+    margin: 0px;
+}
+
+
+header{
+    text-align: center;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 22px;
+}
+
+span{
+     font-size: 32px;
+}
+
+a:link{
+    color: #800080;
+}
+
+a:visited{
+    color: #ff0000;
+}
+
+.top-footer p{
+    font-size: 10px;
+}
+
+footer p
+{
+    font-size: 10px;
+}
+
+
+
