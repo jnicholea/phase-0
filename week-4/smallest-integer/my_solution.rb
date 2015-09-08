@@ -12,7 +12,7 @@
 
 # Your Solution Below
 def smallest_integer(list_of_nums)
-	list_of_nums.mincd .
+	list_of_nums.min
 end
 
 p smallest_integer([45, 234, 239, 58, 92])
