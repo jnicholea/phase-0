@@ -1,3 +1,48 @@
-body {
-	background-color: red;
+header {
+    background: red;
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: auto;
 }
+
+h2 {
+    text-align: center;
+    color: blue;
+}
+
+section.column-2 article h2{
+    color: green;
+}
+
+p {
+    padding: 2px;
+}
+.column-1 {
+    display: inline-block;
+    width: 39%;
+    float: left;
+    border: 3px dashed blue;
+    border-radius: 20px;
+    margin: 5% 5% 0% 5%;
+    padding: 2px;
+}
+
+.column-2 {
+    display: inline-block;
+    width: 39%;
+    float: right;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5% 5% 0% 5%;
+   
+}
+
+footer {
+    display: block;
+    width: 100%;
+    bottom: 0px;
+    background: orange;
+    clear: both;
+}
+
