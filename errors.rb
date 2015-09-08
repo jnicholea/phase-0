@@ -136,50 +136,54 @@ cartmans_lie("Kyle", 'A meteor the size of the earth is about to hit Wyoming!')
 
 # --- error -------------------------------------------------------
 
-5 * "Respect my authoritay!"
+"Respect my authoritay!" * 5
 
 # 1. What is the line number where the error occurs?
-#
+# => 139
 # 2. What is the type of error message?
-#
+# => TypeError
 # 3. What additional information does the interpreter provide about this type of error?
-#
+# => String can't be coerced into Fixnum helped me see that five can't be "respect my authoritay"-ed five times, but "respect my authoritay!" can be multiplied five times
 # 4. Where is the error in the code?
-#
+# => It's the order of the method and object
 # 5. Why did the interpreter give you this error?
-#
+# => The method needs to be a number for an arithmetic function to be applied to it
 
 # --- error -------------------------------------------------------
 
-amount_of_kfc_left = 20/0
+amount_of_kfc_left = 20/2
 
 
 # 1. What is the line number where the error occurs?
-#
+# => 154
 # 2. What is the type of error message?
-#
+# => ZeroDivisionError
 # 3. What additional information does the interpreter provide about this type of error?
-#
+# => n/a
 # 4. Where is the error in the code?
-#
+# => after the /
 # 5. Why did the interpreter give you this error?
-#
+# Basic rules of math say a number can't be divded by zero
 
 # --- error -------------------------------------------------------
 
-require_relative "cartmans_essay.md"
+# require_relative "cartmans_essay.md"
 
 # 1. What is the line number where the error occurs?
-#
+# => 170
 # 2. What is the type of error message?
-#
+# => LoadError
 # 3. What additional information does the interpreter provide about this type of error?
-#
+# => it says the file cannot be found and then tells the path where it expected to find it
 # 4. Where is the error in the code?
-#
+# => this file does not exist
 # 5. Why did the interpreter give you this error?
-#
+# => answered above
 
 
 # --- REFLECTION -------------------------------------------------------
 # Write your reflection below as a comment.
+# -The first time I encountered the error relating to a missing "end" was the most difficult for me because I kept scrolling down to the bottom and not understanding why it would tell me the error was on line 170 when there was no code on line 170
+# -yes, and the key was acutally reading the error message I was getting in its entirety. Previously I had looked at the line number, looked at my code, and tried to figure out the problem before reading the entire error message. The end error message situation taught me that I should first use the error message code from ruby to understand what ruby thinks the problem is, and then look at my code. 
+# -yes
+# -described above, google was helpful as well
