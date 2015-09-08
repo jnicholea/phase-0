@@ -17,3 +17,21 @@ p 365*24
 p 24*60*365*10
 ```
 
+### How does Ruby handle addition, subtraction, multiplication, and division of numbers?
+If it's an integer, calculations will return numbers without an decimal points and round down. If it's a float exact results will be displayed. 
+### What is the difference between integers and floats?
+Answered above
+### What is the difference between integer and float division?
+Answered above
+### What are strings? Why and when would you use them?
+Strings are not numbers are commands, they are collections of symbols that are treated as "things". They can be concatenated or parsed, but they can't be multiplied or divided. You can't divide "milk" by "salmon" but you can divide 10 by 5 because those are integers.
+### What are local variables? Why and when would you use them?
+Local variables are sort of like a nickname for integers or floats or strings. Imagine asking 100 people to write a paragraph-long response to a question, and then wanting to combine all of those paragraphs into one long document. If all of those are stored in a database and each one is assigned a variable you can quickly manipulate the data using "paragraph1" + "paragraph2" + "paragraph3" and having the computer do the combining for you, instead of manually going in and copying and pasting each paragraph individually.
+### How was this challenge? Did you get a good review of some of the basics?
+Yes. When I was struggling with my rspec tests it was actually because I was making the solution much more complicated than it needed to be. This challenge was a good entry into Ruby and a review of some basic principles. 
+
+[Basic Math](./basic-math.rb)
+[Defining Variables](./defining-variables.md)
+[Simple String](./simple-string.rb)
+
+
