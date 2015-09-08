@@ -31,7 +31,7 @@ Local variables are sort of like a nickname for integers or floats or strings. I
 Yes. When I was struggling with my rspec tests it was actually because I was making the solution much more complicated than it needed to be. This challenge was a good entry into Ruby and a review of some basic principles. 
 
 [Basic Math](./basic-math.rb)
-[Defining Variables](./defining-variables.md)
+[Defining Variables](./defining-variables.rb)
 [Simple String](./simple-string.rb)
 
 
