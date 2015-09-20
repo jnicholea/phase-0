@@ -9,17 +9,24 @@
 
 #Solution
 
-SF_bobolinks = ["Jenna Andersen", "Kim Allen", "Jupiter Badot", "Ovi Calvo", "Mike Cerrone", "Eunice Choi", "Paul Etscheit", "Solomon Fernandez", "Kai Huang", "CJ Joulain", "Christopher Mark", "Nathan Park", "Rosslyn Sinclair-Chin", "Shawn Watson", "Nicholas Yee"]
+SF_bobolinks = ["Jenna Andersen", "Kim Allen", "Jupiter Badot", "Ovi Calvo", "Mike Cerrone", "Eunice Choi", "Paul Etscheit", "Solomon Fernandez", "Kai Huang", "CJ Joulain", "Christopher Mark", "Nathan Park", "Rosslyn Sinclair-Chin", "Shawn Watson", "Nicholas Yee", "sample", "sample", "sample", "sample"]
 
 def split(group)
 
-# splits groups, if it can't do five, it does 4, and if it can't do that it does three. 	
+# splits into group of five, but if the remainder is 1 or 2 it wont pull from the second-to last index to or third-to-last index to make those groups of four or three.
 	if group.length % 5 == 0
 		return group.shuffle.each_slice(5).to_a
-	elsif group.length % 4 == 0
-		return group.shuffle.each_slice(4).to_a
-	else group.length % 3 == 0
-		return group.shuffle.each_slice(3).to_a
+	elsif group.length % 5 == 1
+		return group.shuffle.each_slice(5).to_a
+	elsif group.length % 5 == 2
+		return group.shuffle.each_slice(5).to_a
+	else group.length % 5 == 3
+		return group.shuffle.each_slice(5).to_a
+
+	# elsif group.length % 4 == 0
+	# 	return group.shuffle.each_slice(4).to_a
+	# else group.length % 3 == 0
+	# 	return group.shuffle.each_slice(3).to_a
 	end
 
 
