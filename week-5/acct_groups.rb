@@ -13,7 +13,7 @@ SF_bobolinks = ["Jenna Andersen", "Kim Allen", "Jupiter Badot", "Ovi Calvo", "Mi
 
 def split(group)
 
-# splits into group of five, but if the remainder is 1 or 2 it wont pull from the second-to last index to or third-to-last index to make those groups of four or three.
+# splits into group of five, but if the remainder is 1 or 2 it won't pull from the second-to last index to or third-to-last index to make those groups of four or three.
 	if group.length % 5 == 0
 		return group.shuffle.each_slice(5).to_a
 	elsif group.length % 5 == 1
@@ -35,6 +35,43 @@ end
 
 
 p split(SF_bobolinks)
+
+#Refactored
+#Refactored with the help of John Dees during Office Hours
+
+SF_bobolinks = ["Jenna Andersen", "Kim Allen", "Jupiter Badot", "Ovi Calvo", "Mike Cerrone", "Eunice Choi", "Paul Etscheit", "Solomon Fernandez", "Kai Huang", "CJ Joulain", "Christopher Mark", "Nathan Park", "Rosslyn Sinclair-Chin", "Shawn Watson", "Nicholas Yee", "sample", "sample"]
+
+test = [1,2,3,4,5,6]
+
+def split(group)
+
+
+  if group.length % 5 == 0 || group.length % 5 == 3 || group.length % 5 == 1 
+    acct_group = group.shuffle.each_slice(5).to_a 
+  elsif group.length % 4 == 0 || group.length % 4 == 3 || group.length % 4 == 1 
+    acct_group = group.shuffle.each_slice(4).to_a
+  end
+  
+#   example of nested array
+#   p acct_group[0] # this should return the first element (the first inner array) of account group
+#   p acct_group[0][0] # this should return the first element of the first array of account group
+  
+  if acct_group.last.length == 1
+    #adding the [0] returns the 0th element of the array, not the array itself
+    acct_group.first << acct_group.pop[0]
+  end
+  
+  acct_group.each_with_index do |element, i|
+    puts "Group #{i+1}"
+    print element
+    # acts as line break to break up arrays
+    puts
+  end
+end
+
+
+split(SF_bobolinks)
+# p SF_bobolinks.size
 
 # What was the most interesting and most difficult part of this challenge?
 # - The most interesting part was thinking through the pseudocode. Most difficult was definitely turning my code into reality. 
