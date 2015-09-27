@@ -39,7 +39,9 @@ class BingoBoard
 
   def initialize(board)
     @bingo_board = board
-    @bingo_array = ["B", "I", "N", "G", "O"]
+    @letters = {B: 0, I: 1, N: 2, G: 3, O: 4}
+    # @bingo_array = ["B", "I", "N", "G", "O"]
+    @bingo_array = @letters.keys
     @call_range = (1...100)
     generate
   end
@@ -47,67 +49,26 @@ class BingoBoard
   def generate
 
 
-    @letter = @bingo_array.sample
+    @letter = @bingo_array.sample.to_s
     call_sample = @call_range.to_a.sample
     @call = call_sample.to_i
-    @call = 47
-    @letter = "B"
+    @letter = "N"
+    @call = 97
+
 
     @bingo_board_transposed = @bingo_board.transpose
-    @B = @bingo_board_transposed[0]
-    @I = @bingo_board_transposed[1]
-    @N = @bingo_board_transposed[2]
-    @G = @bingo_board_transposed[3]
-    @O = @bingo_board_transposed[4]
 
     called
   end
 
   def called
 
-    
-    if @letter == "B"
-      @B.map do |element|
-        if element == @call
-          element = "X"
-          @bingo_board_transposed[0] = @B
-        end
-      end
-    end
-
-    if @letter == "I"
-      @I.map do |element|
-        if element == @call
-          element = "X"
-          @bingo_board_transposed[1] = @I
-        end
-      end
-    end
-
-     if @letter == "N"
-      @N.map do |element|
-        if element == @call
-          element = "X"
-          @bingo_board_transposed[2] = @N
-        end
-      end
-    end
-
-     if @letter == "G"
-      @G.map do |element|
-        if element == @call
-          element = "X"
-          @bingo_board_transposed[3] = @G
-        end
-      end
-    end
-
-     if @letter == "O"
-      @O.map do |element|
-        if element == @call
-          element = "X"
-          @bingo_board_transposed[4] = @O
-        end
+    i = @letters[@letter.intern]
+    @bingo_board_transposed[i].map! do |element|
+      if element == @call
+        "X"
+      else
+        element
       end
     end
 
@@ -124,9 +85,6 @@ class BingoBoard
     p @working_board[2]
     p @working_board[3]
     p @working_board[4]
-
-
-
 
   end 
 end
