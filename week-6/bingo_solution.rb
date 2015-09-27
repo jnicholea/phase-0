@@ -48,7 +48,10 @@ class BingoBoard
 
 
     @letter = @bingo_array.sample
-    @call = @call_range.to_a.sample
+    call_sample = @call_range.to_a.sample
+    @call = call_sample.to_i
+    @call = 47
+    @letter = "B"
 
     @bingo_board_transposed = @bingo_board.transpose
     @B = @bingo_board_transposed[0]
@@ -67,7 +70,7 @@ class BingoBoard
       @B.map do |element|
         if element == @call
           element = "X"
-          @B = @bingo_board_transposed[0]
+          @bingo_board_transposed[0] = @B
         end
       end
     end
@@ -76,7 +79,7 @@ class BingoBoard
       @I.map do |element|
         if element == @call
           element = "X"
-          @I = @bingo_board_transposed[1]
+          @bingo_board_transposed[1] = @I
         end
       end
     end
@@ -85,7 +88,7 @@ class BingoBoard
       @N.map do |element|
         if element == @call
           element = "X"
-          @N = @bingo_board_transposed[2]
+          @bingo_board_transposed[2] = @N
         end
       end
     end
@@ -94,7 +97,7 @@ class BingoBoard
       @G.map do |element|
         if element == @call
           element = "X"
-          @G = @bingo_board_transposed[3]
+          @bingo_board_transposed[3] = @G
         end
       end
     end
@@ -103,13 +106,10 @@ class BingoBoard
       @O.map do |element|
         if element == @call
           element = "X"
-          @O = @bingo_board_transposed[4]
+          @bingo_board_transposed[4] = @O
         end
       end
     end
-
-    else
-        puts "No matches"
 
     print_board
 
