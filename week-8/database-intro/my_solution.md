@@ -18,11 +18,11 @@
    INNER JOIN regions
    ORDER BY region_id ASC;
 
-What are databases for?
-	-Storing very large sets of data with varying relationships ot each other
-What is a one-to-many relationship?
+*What are databases for?
+	-Storing very large sets of data with varying relationships to each other
+*What is a one-to-many relationship?
 	-For the outfit example, outfits belong to Cher, and Cher has many outfits.
-What is a primary key? What is a foreign key? How can you determine which is which?
+*What is a primary key? What is a foreign key? How can you determine which is which?
 	-A primary key is the "id" for each individual table. A foreign key is a sort of identifier that links to the primary key of another table. 
 How can you select information out of a SQL database? What are some general guidelines for that?
 	-By using the language for SQL. Commands are written in uppercase, identities are in lower case. 
