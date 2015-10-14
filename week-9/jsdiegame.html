@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<meta charset="utf-8">
+		<title>JS Die</title>
+
+<style>
+.instructions_header {
+	text-align: center;
+	width: 100%;
+	font-size: 32px;
+}
+
+.instructions {
+	text-align: center;
+	width: 100%;
+	font-size: 22px;
+
+}
+ #dice_graphic {
+ 	text-align: center;
+ 	width: 100%;
+ 	padding-top: 100px;
+ 	padding-left: 600px;
+ 	width: 200px;
+ 	position: relative;
+ }
+
+  #winner_graphic {
+ 	text-align: center;
+ 	width: 100%;
+ 	padding-top: 100px;
+ 	padding-left: 475px;
+ 	width: 500px;
+ 	position: relative;
+ }
+
+ #loser_graphic {
+ 	text-align: center;
+ 	width: 100%;
+ 	padding-top: 100px;
+ 	padding-left: 550px;
+ 	width: 300px;
+ 	position: relative;
+ }
+ #prompt_button {
+ 	text-align: center;
+	width: 100%;
+	background-color: red;
+	font-size: 40px;
+ }
+
+ #user_input {
+ 	text-align: center;
+	width: 100%;
+	background-color: green;
+	font-size: 40px;
+ }
+
+  #computer_roll {
+ 	text-align: center;
+	width: 100%;
+	background-color: yellow;
+	font-size: 40px;
+ }
+
+</style>
+</head>
+<body>
+
+	<img id='dice_graphic' alt="die" src="http://typophile.com/files/Die_Spire_01_4832.png"/></img>
+	<img id='winner_graphic' style="display:none;" alt="die" src="http://static1.squarespace.com/static/5391fd85e4b07b77400adbe0/53948c59e4b0bb296301de0f/53e4d76be4b02331b2e66155/1407506822099/?format=1500w"/></img>
+	<img id='loser_graphic' style="display:none;" alt="die" src="http://stylecarrot.com/wp-content/uploads/2013/02/Nope-Society6-Gemma-Correll-e1359771171257.jpg"/></img>
+	<h3 class='instructions_header'>Instructions</h3>
+	<h4 class='instructions'>Welcome to Guess & Roll. What will the die roll? Enter your guess using the box below.
+	<br><br>
+	<em>(Refresh the page to play again.)<em></h4>
+	<input id="prompt_button" type="button" value="Step 1: Enter Guess Here" />
+	<input id="user_input" value="Step 2: Guess will appear here once confirmed" />
+	<input id="computer_roll" value="Step 3: Click the die to reveal computer's roll" />
+
+
+<script>
+var user_guess;
+	$("#prompt_button").click(function(e){
+					e.preventDefault();
+					user_guess = prompt("what is your guess?")
+					$('#user_input').val("Step 2: Your guess is " + user_guess);
+
+			});
+	$("#dice_graphic").click(function(e){
+					e.preventDefault();
+					var die = Math.floor(Math.random()*6 + 1);
+					$('#computer_roll').val("The computer has rolled " + die);
+					result(user_guess, die);
+
+			});
+
+  var result = function(user_guess, die){
+	if (user_guess == die) {
+		// console.log("You're a winner!");
+	  $('#dice_graphic').hide();
+      $('#winner_graphic').show();
+	} 
+    else if (user_guess !== die) {
+		// console.log("You're a loser!");
+	  $('#dice_graphic').hide();
+      $('#loser_graphic').show();
+	}
+  };
+
+
+
+</script>
+</body>
+</html>
